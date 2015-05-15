@@ -1,0 +1,58 @@
+- content_for :left_sidebar do
+  %h1 ~ hush.es ~
+  %h2 emphasis on violet
+
+  %ul
+    %li
+      blog
+      %ul
+        %li by tags
+        %li by date
+    %li
+      programs
+      %ul
+        %li art
+        %li tools
+    %li
+      writing
+      %ul
+        %li poetry
+        %li fiction
+        %li essays
+        %li collections
+    %li
+      music
+      %ul
+        %li art/classical
+        %li beats
+        %li acoustic/analogue
+    %li comissions
+    %li about
+    %li contact
+
+  %ul
+    elsewhere:
+    %li
+      %a{href: 'http://vacuumflowers.com/weblog/'} Loren Schmidt
+    %li
+      %a{href: 'http://katierosepipkin.com'} Katie Rose Pipkin
+    %li
+      %a{href: 'http://aliendovecote.com'} Porpentine
+    %li
+      %a{href: 'http://lczzz.me'} Thrice
+    %li
+      %a{href: 'http://cargocollective.com/ossefort'} Zach Ossefort
+
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ~ hush.es ~
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .left-sidebar
+      = yield :left_sidebar
+    .content
+      = yield
